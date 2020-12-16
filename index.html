@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue ToDoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <div id="app">
+        <h1>To-Do List di Andrea</h1>
+        <div class="input-line">
+            <input @keyup.enter="addTask" type="text" placeholder="Inserisci un task">
+            <button @click="addTask">Add</button>
+        </div>
+        <h3>Da fare oggi</h3>
+        <ul id="task-list" v-if="tasks.length > 0">
+            <li v-for="(task, index) in tasks">{{ task }}<i @click="removeTask(index)" class="fas fas fa-trash-alt"></i></li>
+        </ul>
+        <p v-else>Oggi niente da fare!</p>
+    </div>
+    
+
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- myJS -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
