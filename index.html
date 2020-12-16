@@ -12,14 +12,14 @@
     <div id="app">
         <h1>To-Do List di Andrea</h1>
         <div class="input-line">
-            <input @keyup.enter="addTask" type="text" placeholder="Inserisci un task">
-            <button @click="addTask">Add</button>
+            <input @keyup.enter="addTask" type="text" placeholder="Aggiungi un task">
+            <button @click="addTask"><i class="fas fa-plus"></i></button>
         </div>
-        <h3>Da fare oggi</h3>
+        <h2>Da fare oggi ⬇️</h2>
         <ul id="task-list" v-if="tasks.length > 0">
-            <li v-for="(task, index) in tasks">{{ task }}<i @click="removeTask(index)" class="fas fas fa-trash-alt"></i></li>
+            <li v-for="(task, index) in tasks">{{ task }}<i @click="removeTask(index)" class="fas fa-ghost"></i></li>
         </ul>
-        <p v-else>Oggi niente da fare!</p>
+        <p v-else>Niente! 🎉🥳</p>
     </div>
     
 

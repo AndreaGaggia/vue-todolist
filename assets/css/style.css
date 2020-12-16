@@ -11,9 +11,69 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 li {
     list-style: none;
 }
 
+.input-line {
+    height: 3rem;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+input, button {
+    height: 100%;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 4px;
+}
+input {
+    border: 1px solid royalblue;
+    flex: 1;
+    margin-right: 10px;
+    padding: 8px;
+}
+button {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#task-list li {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 8px;
+    color: white;
+    background-color: rgb(65, 105, 225, .8);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+p {
+    font-size: 2rem;
+    color: green;
+    font-weight: 700;
+}
+
+#task-list i {
+    color: yellow;
+    cursor: pointer;
+    font-size: 26px;
+}
