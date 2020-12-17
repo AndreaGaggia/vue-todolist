@@ -15,7 +15,8 @@ Attenzione: l'utente non deve inserire tasks vuote ma almeno un tot di caratteri
 let app = new Vue({
     el: '#app',
     data: {
-        tasks: ['mangiare', 'dormire', 'lavarsi']
+        tasks: ['mangiare', 'dormire', 'lavarsi'],
+        completed: []
     },
     methods: {
         addTask(){
@@ -26,7 +27,14 @@ let app = new Vue({
             }  
         },
         removeTask(index){
-            this.tasks.splice(index, 1);
+            let newCompleted = this.tasks.splice(index, 1).toString();
+            this.completed.push(newCompleted);
+        },
+        deleteTask(index){
+            this.completed.splice(index, 1);
+        },
+        deleteAll(){
+            this.completed = [];
         }
     }
 });
