@@ -12,12 +12,22 @@ body {
 h1 {
     margin-bottom: 20px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 li {
     list-style: none;
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intestazione {
+    max-width: 400px;
+}
 .input-line {
     height: 3rem;
     display: flex;
@@ -45,11 +55,16 @@ button {
 
 h2 {
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.to-do, .completate {
+.to-do, .completed, .da-fare, .completate {
     display: flex;
     flex-direction: column;
+    width: 300px;
+}
+.da-fare {
+    margin-right: 50px;
 }
 
 .liste li {
@@ -65,13 +80,15 @@ h2 {
 .liste i {
     cursor: pointer;
 }
+.completed i, .to-do i {
+    margin-left: 10px;
+}
 
 .completed li {
     background-color: rgb(28, 167, 28, .8);
 }
 .completed i {
     color: red;
-    margin-left: 5px;
 }
 
 .to-do li {
@@ -79,14 +96,14 @@ h2 {
 }
 .to-do i {
     color: yellow;
-    margin-left: 5px;
 }
 
 /* niente da fare */
 .da-fare p {
     font-size: 1.2rem;
-    color: green;
+    color: indigo;
     font-weight: 700;
+    text-align: center;
 }
 
 /* delete all */
@@ -108,6 +125,7 @@ h2 {
 .liste {
     display: flex;
     justify-content: space-between;
-    max-width: 100vw;
+    max-width: 800px;
 }
+
 

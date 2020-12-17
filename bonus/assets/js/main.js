@@ -35,6 +35,10 @@ let app = new Vue({
         },
         deleteAll(){
             this.completed = [];
+        },
+        ripristinaTask(index){
+            let taskRipristinato = this.completed.splice(index, 1).toString();
+            this.tasks.push(taskRipristinato);
         }
     }
 });
