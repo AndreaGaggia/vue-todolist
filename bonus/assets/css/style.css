@@ -14,6 +14,9 @@ h1 {
     text-transform: uppercase;
     text-align: center;
 }
+h4 {
+    text-align: center;
+}
 
 li {
     list-style: none;
@@ -163,4 +166,8 @@ input#modifica {
     padding: 10px 20px;
     border-radius: 10px;
     background-color: yellow;
+}
+
+span.icons {
+    min-width: 57px;
 }

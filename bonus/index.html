@@ -26,7 +26,7 @@
                 <ul class="to-do" v-if="tasks.length > 0">
                     <li v-for="(task, index) in tasks">
                         {{ task }}
-                        <span>
+                        <span class="icons">
                             <i @click="removeTask(index)" class="fas fa-check"></i>
                             <i @click="modifyWindow(index, task)" class="fas fa-pen"></i>
                         </span>
@@ -52,7 +52,7 @@
                 <ul class="completed">
                     <li v-for="(task, index) in completed">
                         {{ task }}
-                        <span>
+                        <span class="icons">
                             <i @click="ripristinaTask(index)" class="fas fa-undo-alt"></i>
                             <i @click="deleteTask(index)" class="far fa-trash-alt" style="text-decoration: none;"></i>
                         </span>
