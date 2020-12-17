@@ -34,19 +34,19 @@ li {
     margin-bottom: 30px;
 }
 
-input, button {
+.intestazione input, .intestazione button {
     height: 100%;
     font-size: 1.5rem;
     border: none;
     border-radius: 4px;
 }
-input {
+.intestazione input {
     border: 1px solid royalblue;
     flex: 1;
     margin-right: 10px;
     padding: 8px;
 }
-button {
+.intestazione button {
     background-color: green;
     color: white;
     cursor: pointer;
@@ -93,6 +93,7 @@ h2 {
 
 .to-do li {
     background-color: rgb(65, 105, 225, .8);
+    /* position: relative; */
 }
 .to-do i {
     color: yellow;
@@ -128,4 +129,38 @@ h2 {
     max-width: 800px;
 }
 
+/* modfica task */
+.modifica-task {
+    color: white;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(102, 22, 22, 0.835);
+    font-weight: normal;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 40px;
+    display: grid;
+    place-items: center;
+}
 
+.modifica-task .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    color: yellow;
+}
+input#modifica {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.modifica-task button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: yellow;
+}

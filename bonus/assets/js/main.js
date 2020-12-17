@@ -16,7 +16,11 @@ let app = new Vue({
     el: '#app',
     data: {
         tasks: ['mangiare', 'dormire', 'lavarsi'],
-        completed: []
+        completed: [],
+        modifying: false,
+        modifyingTask: null,
+        modifiedTask: null,
+        taskIndex: null
     },
     methods: {
         addTask(){
@@ -39,6 +43,21 @@ let app = new Vue({
         ripristinaTask(index){
             let taskRipristinato = this.completed.splice(index, 1).toString();
             this.tasks.push(taskRipristinato);
+        },
+        modifyWindow(index, task){
+            this.modifiedTask = "";
+            this.modifying = true;
+            this.taskIndex = index;
+            this.modifyingTask = task;
+        },
+        finalizeMod(){
+            if (this.modifiedTask.length > 0) {
+                this.tasks[this.taskIndex] = this.modifiedTask;
+                this.modifying = false;
+            }
+        },
+        annulla(){
+            this.modifying = false;
         }
     }
 });

@@ -20,6 +20,7 @@
         </div>
 
         <div class="liste">
+            <!-- lista dei task da fare -->
             <div class="da-fare">
                 <h2>Da fare ⬇️</h2>
                 <ul class="to-do" v-if="tasks.length > 0">
@@ -27,12 +28,25 @@
                         {{ task }}
                         <span>
                             <i @click="removeTask(index)" class="fas fa-check"></i>
-                            <i @click="modiifyTask(index)" class="fas fa-pen"></i>
+                            <i @click="modifyWindow(index, task)" class="fas fa-pen"></i>
                         </span>
                     </li>
+                    <!-- bloco per modifica task -->
+                    <div v-if="modifying" class="modifica-task">
+                        <h4>Stai modificando il task "{{ modifyingTask }}"</h4>
+                        <div class="input-group">
+                            <label for="modifica">Nuovo nome:</label>
+                            <input @keypress.enter="finalizeMod" type="text" id="modifica" v-model="modifiedTask">
+                        </div>
+                        <div class="buttons">
+                            <button @click="finalizeMod">Modifica</button>
+                            <button @click="annulla" style="background-color: gainsboro;">Annulla</button>
+                        </div>
+                    </div>
                 </ul>
                 <p v-else>Niente! 🎉🥳</p>
             </div>
+            <!-- lista dei task completati -->
             <div class="completate">
                 <h2>Completati ✅</h2>
                 <ul class="completed">
@@ -44,6 +58,7 @@
                         </span>
                     </li>
                 </ul>
+                <!-- lo svuota cestino che entra con almeno 2 task completati -->
                 <div v-if="completed.length >= 2" class="delete-all">
                     <i @click="deleteAll" class="fas fa-trash"></i>
                     <p>[elimina tutti]</p>
